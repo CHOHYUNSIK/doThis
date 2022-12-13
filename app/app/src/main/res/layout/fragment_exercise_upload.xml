@@ -1,0 +1,117 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fragment.ExerciseUploadFragment"
+    android:layout_marginTop="66dp"
+    android:id="@+id/exercise_layout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <VideoView
+                android:id="@+id/video_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:fontFamily="@font/fontstyle"
+                android:id="@+id/tx_userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="userName"
+                android:textSize="30dp"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/video_view"
+                app:layout_constraintTop_toTopOf="@+id/video_view"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="25dp"/>
+
+            <TextView
+                android:id="@+id/tx_bar"
+                android:layout_width="100dp"
+                android:layout_height="2dp"
+                android:background="#41EAA0"
+                app:layout_constraintStart_toStartOf="@+id/tx_userName"
+                app:layout_constraintTop_toBottomOf="@+id/tx_userName" />
+
+            <TextView
+                android:fontFamily="@font/fontstyle"
+                android:id="@+id/tx_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="yymmdd"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/video_view"
+                app:layout_constraintTop_toBottomOf="@+id/tx_bar"
+                android:layout_marginLeft="15dp"/>
+
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="2dp"
+                android:background="#41EAA0"
+                app:layout_constraintStart_toStartOf="@+id/tx_date"
+                app:layout_constraintTop_toBottomOf="@+id/tx_date" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/custom_layout" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:indeterminateDrawable="@drawable/loading_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="invisible"
+            android:layout_centerHorizontal="true"
+            android:background="@color/white"/>
+        <TextView
+            android:fontFamily="@font/fontstyle"
+            android:id="@+id/tx_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading..."
+            android:layout_below="@id/progress_bar"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/btn_analyse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="80dp"
+            android:background="@drawable/custom_layout"
+            android:fontFamily="@font/fontstyle"
+            android:text="분석하기"
+            android:textSize="25dp" />
+    </RelativeLayout>
+
+</FrameLayout>
